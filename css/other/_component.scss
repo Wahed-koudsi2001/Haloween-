@@ -1,0 +1,88 @@
+.btn {
+    border: none;
+    background-color: #fff;
+    padding: 10px 30px;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        background-color: $mainColor;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+}
+
+.heading {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    span {
+        color: $mainColor;
+    }
+}
+
+.row {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .col {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        color: #fff;
+        img {
+            width: 100%;
+        }
+        .icons {
+            position: absolute;
+            top: 20px;
+            right: -40px;
+            transition: 0.3s linear;
+            i {
+                display: block;
+                color: #000;
+                margin: 20px auto;
+                font-size: 20px;
+                z-index: 999;
+                &::before {
+                    background-color: #fff;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    :hover {
+                        background-color: $mainColor;
+                    }
+                }
+            }
+        }
+        &:hover .icons {
+            right: 20px;
+        }
+        h4 {
+            margin: 10px 0;
+            font-size: 26px;
+        }
+        span {
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 20px;
+            .line {
+                font-weight: lighter;
+                text-decoration: line-through;
+                color: $mainColor;
+                font-size: 16px;
+            }
+        }
+    }
+}
